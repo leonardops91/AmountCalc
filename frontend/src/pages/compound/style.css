@@ -1,0 +1,190 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.container .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 920px;
+    border-radius: 0 0 8px 8px;
+    padding: 10px 10px 20px 10px;
+    background: #ffffff;
+    box-shadow: 0px 0px 30px 5px #cccccc;
+    margin-bottom: 30px;
+}
+
+.container .header img {
+    width: 150px;
+}
+
+.container .header a{
+    font-family: 'Roboto';
+    text-decoration: none;
+    width: 100%;
+    max-width: 160px;
+    height: 40px;
+    color: aliceblue;
+    background: rgb(26, 28, 110);
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+}
+
+.container .header a:hover {
+    opacity: 90%;
+}
+
+.container .form {
+    width: 100%;
+    max-width: 920px;
+    border-radius: 8px;
+    padding: 10px 10px 20px 10px;
+    background: #ffffff;
+    box-shadow: 0px 0px 30px 5px #cccccc;
+    margin-bottom: 30px;
+
+}
+
+.container .form h1, h2 {
+    font-family: 'roboto', sans-serif;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.container .form form {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.container .form .input {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+
+
+.container .form h3 {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin: 10px 0;
+
+}
+
+.container .form form div div{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 290px;
+}
+
+.container .form div div p {
+    height: 100%;
+    padding: 9.59px;
+    background: rgb(2, 4, 71);
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 0 8px 8px 0;
+    color: #ffffff;
+}
+
+.container .form div div input {
+    border:2px solid rgb(2, 4, 71);
+    width: 90%;
+    border-radius: 8px 0 0 8px;
+}
+
+.container .form div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+.container .form button{
+    font-family: 'Roboto';
+    text-decoration: none;
+    width: 200px;
+    height: 40px;
+    color: aliceblue;
+    background: rgb(2, 4, 71);
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+    margin-top: 30px;
+}
+
+.container .form button:hover {
+    opacity: 90%;
+}
+
+.container .result {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container section div {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.container .result div h3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container span {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    width: 120%;
+    max-width: 190px ;
+    height: 100px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+    background: rgb(2, 4, 71);
+    border-radius: 8px;
+    color: #ffffff;
+}
+
+
