@@ -12,7 +12,7 @@ module.exports = {
         
         let period = convertYearToMonth(numberOfMonths, numberOfYears);
 
-        let interest = ConvertPercentToDecimal(yearlyInterest, monthlyInterest);
+        let interest = convertPercentToDecimal(yearlyInterest, monthlyInterest);
      
         let monthlyAmount = calculateMonthlyAmount(period, monthlyValue, interest);
 
@@ -35,7 +35,7 @@ function calculateMonthlyAmount(period, monthlyValue, interest) {
     return monthlyAmount;
 }
 
-function ConvertPercentToDecimal(yearlyInterest, monthlyInterest) {
+function convertPercentToDecimal(yearlyInterest, monthlyInterest) {
     let interest;
     let iPerYear = yearlyInterest / 100;
 
