@@ -11,19 +11,19 @@ import './style.css';
 export default function Simple(){
     const [initValue, setInitValue] = useState('');
     const [monthlyValue, setMonthlyValue] = useState('');
-    const [intPerMonth, setIntPerMonth] = useState('');
-    const [intPerYear, setIntPerYear] = useState('');
+    const [monthlyInterest, setMonthlyInterest] = useState('');
+    const [yearlyInterest, setYearlyInterest] = useState('');
     const [numberOfMonths, setNumberOfMonths] = useState('');
     const [numberOfYears, setNumberOfYears] = useState('');
-    const [amount, setAmount] = useState('');
-    const [totContribution, setTotContribution] = useState('');
+    const [totalAmount, setTotalAmount] = useState('');
+    const [amountInvested, setAmountInvested] = useState('');
 
 
     const data = {
         initValue: initValue.replace("," , "."),
         monthlyValue: monthlyValue.replace("," , "."),
-        intPerMonth: intPerMonth.replace("," , "."),
-        intPerYear: intPerYear.replace("," , "."),
+        monthlyInterest: monthlyInterest.replace("," , "."),
+        yearlyInterest: yearlyInterest.replace("," , "."),
         numberOfMonths: numberOfMonths.replace("," , "."),
         numberOfYears: numberOfYears.replace("," , ".")
     };
@@ -36,8 +36,8 @@ export default function Simple(){
 
         try {
             const response = await api.post('/simple', data);
-            setAmount(response.data.amount);
-            setTotContribution(response.data.totContribution);
+            setTotalAmount(response.data.totalAmount);
+            setAmountInvested(response.data.amountInvested);
                         
         } catch (error) {
             alert('Erro no envio, tente novamente.');
@@ -46,8 +46,8 @@ export default function Simple(){
     function handleReset() {
         setInitValue("");
         setMonthlyValue("");
-        setIntPerMonth("");
-        setIntPerYear("");
+        setMonthlyInterest("");
+        setYearlyInterest("");
         setNumberOfMonths("");
         setNumberOfYears("");
     }
@@ -92,12 +92,12 @@ export default function Simple(){
                     <h3>Taxa de juros:</h3>
                     <div className = "input">
                         <div><input type="double"
-                        value={intPerMonth}
-                        onChange={e => setIntPerMonth(e.target.value)}  
+                        value={monthlyInterest}
+                        onChange={e => setMonthlyInterest(e.target.value)}  
                         placeholder="Taxa de juros mensais"/><p>%</p></div>
                         <div><input type="double"
-                        value={intPerYear}
-                        onChange={e => setIntPerYear(e.target.value)}
+                        value={yearlyInterest}
+                        onChange={e => setYearlyInterest(e.target.value)}
                         placeholder="Taxa de juros anuais"/><p>%</p></div>
                     </div>
                     <h3>Período de permanência</h3>
@@ -114,28 +114,28 @@ export default function Simple(){
 
                     <div className="button">
                         <button type="submit">Calcular</button>
-                        {amount > 0 && <button type = "reset" >resetar</button>}
+                        {totalAmount > 0 && <button type = "reset" >resetar</button>}
                     </div>
                 <section className="result">
-                    {amount > 0 &&
+                    {totalAmount > 0 &&
                         <div className= "divResult">
-                            <span id="TotContribution"><h3>Valor investido:</h3> {Intl.NumberFormat('pt-BR', 
+                            <span id="amountInvested"><h3>Valor investido:</h3> {Intl.NumberFormat('pt-BR', 
                             {style: 'currency', currency: 'BRL'})
-                            .format(totContribution)}</span>
+                            .format(amountInvested)}</span>
                         </div>
                     }
-                    {amount > 0 &&
+                    {totalAmount > 0 &&
                         <div className= "divResult">
-                            <span id="Amount"><h3>Juros recebidos:</h3> {Intl.NumberFormat('pt-BR', 
+                            <span id="totalAmount"><h3>Juros recebidos:</h3> {Intl.NumberFormat('pt-BR', 
                             {style: 'currency', currency: 'BRL'})
-                            .format((amount - totContribution).toFixed(2))}</span>
+                            .format((totalAmount - amountInvested).toFixed(2))}</span>
                         </div>
                     }
-                    {amount > 0 &&
+                    {totalAmount > 0 &&
                         <div className= "divResult">
-                            <span id="Amount"><h3>Amonte total:</h3> {Intl.NumberFormat('pt-BR', 
+                            <span id="totalAmount"><h3>Amonte total:</h3> {Intl.NumberFormat('pt-BR', 
                             {style: 'currency', currency: 'BRL'})
-                                .format(amount.toFixed(2))}</span>
+                                .format(totalAmount.toFixed(2))}</span>
                         </div>
                     }
                     
