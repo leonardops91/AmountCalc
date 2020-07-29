@@ -23,6 +23,7 @@ module.exports = {
         amountInvested = monthlyValue * numberOfMonths + initValue*1;
         totalAmount = amountOfInitValue + amountOfMonthlyValue;
         
+        
         return res.json({totalAmount, amountInvested});
     }
 }
