@@ -1,7 +1,10 @@
 {
-  "name": "amountCalc",
+  "name": "amount_calc",
   "version": "1.0.0",
   "description": "",
+  "engines":{
+    "node": "12.x"
+  },
   "main": "index.js",
   "dependencies": {
     "cors": "^2.8.5",
