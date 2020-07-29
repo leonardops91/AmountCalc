@@ -11,8 +11,8 @@ import './style.css';
 export default function Compound(){
     const [initValue, setInitValue] = useState('');
     const [monthlyValue, setMonthlyValue] = useState('');
-    const [intPerMonth, setIntPerMonth] = useState('');
-    const [intPerYear, setIntPerYear] = useState('');
+    const [monthlyInterest, setmonthlyInterest] = useState('');
+    const [yearlyInterest, setyearlyInterest] = useState('');
     const [numberOfMonths, setNumberOfMonths] = useState('');
     const [numberOfYears, setNumberOfYears] = useState('');
     const [amount, setAmount] = useState('');
@@ -22,8 +22,8 @@ export default function Compound(){
     const data = {
         initValue: initValue.replace("," , "."),
         monthlyValue: monthlyValue.replace("," , "."),
-        intPerMonth: intPerMonth.replace("," , "."),
-        intPerYear: intPerYear.replace("," , "."),
+        monthlyInterest: monthlyInterest.replace("," , "."),
+        yearlyInterest: yearlyInterest.replace("," , "."),
         numberOfMonths: numberOfMonths.replace("," , "."),
         numberOfYears: numberOfYears.replace("," , ".")
     };
@@ -32,13 +32,10 @@ export default function Compound(){
     async function handleCompound(e) {
         e.preventDefault();
 
-
-
         try {
             const response = await api.post('/compound', data);
             setAmount(response.data.amount);
-            setTotContribution(response.data.totContribution);
-                        
+            setTotContribution(response.data.totContribution);                        
         } catch (error) {
             alert('Erro no envio, tente novamente.');
         };
@@ -46,13 +43,12 @@ export default function Compound(){
     function handleReset() {
         setInitValue("");
         setMonthlyValue("");
-        setIntPerMonth("");
-        setIntPerYear("");
+        setmonthlyInterest("");
+        setyearlyInterest("");
         setNumberOfMonths("");
         setNumberOfYears("");
     }
     
-
     return(
         <div className="container">
             <div className="header">
@@ -92,24 +88,24 @@ export default function Compound(){
                     <h3>Taxa de juros:</h3>
                     <div className = "input">
                         <div><input type="double"
-                        value={intPerMonth}
-                        onChange={e => setIntPerMonth(e.target.value)}  
-                        placeholder="Taxa de juros mensais"/><p>%</p></div>
+                        value={monthlyInterest}
+                        onChange={e => setmonthlyInterest(e.target.value)}  
+                        placeholder="Mensal"/><p>%</p></div>
                         <div><input type="double"
-                        value={intPerYear}
-                        onChange={e => setIntPerYear(e.target.value)}
-                        placeholder="Taxa de juros anuais"/><p>%</p></div>
+                        value={yearlyInterest}
+                        onChange={e => setyearlyInterest(e.target.value)}
+                        placeholder="Anual"/><p>%</p></div>
                     </div>
                     <h3>Período de permanência</h3>
                     <div className = "input">
                         <div><input type="double"
                         value={numberOfMonths}
                         onChange={e => setNumberOfMonths(e.target.value)}
-                        placeholder="Periodo em meses"/><p>Meses</p></div>
+                        placeholder="Meses"/><p>Meses</p></div>
                         <div><input type="double"
                         value={numberOfYears}
                         onChange={e => setNumberOfYears(e.target.value)}
-                        placeholder="Periodo em anos"/><p>Anos</p></div>
+                        placeholder="Anos"/><p>Anos</p></div>
                     </div>
 
                     <div className="button">
