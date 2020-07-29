@@ -15,8 +15,8 @@ export default function Compound(){
     const [yearlyInterest, setyearlyInterest] = useState('');
     const [numberOfMonths, setNumberOfMonths] = useState('');
     const [numberOfYears, setNumberOfYears] = useState('');
-    const [amount, setAmount] = useState('');
-    const [totContribution, setTotContribution] = useState('');
+    const [totalAmount, setTotalAmount] = useState('');
+    const [amountInvested, setAmountInvested] = useState('');
 
 
     const data = {
@@ -34,8 +34,8 @@ export default function Compound(){
 
         try {
             const response = await api.post('/compound', data);
-            setAmount(response.data.amount);
-            setTotContribution(response.data.totContribution);                        
+            setTotalAmount(response.data.totalAmount);
+            setAmountInvested(response.data.amountInvested);                        
         } catch (error) {
             alert('Erro no envio, tente novamente.');
         };
@@ -110,28 +110,28 @@ export default function Compound(){
 
                     <div className="button">
                         <button type="submit">Calcular</button>
-                        {amount > 0 && <button type = "reset" >resetar</button>}
+                        {totalAmount > 0 && <button type = "reset" >resetar</button>}
                     </div>
                 <section className="result">
-                    {amount > 0 &&
+                    {totalAmount > 0 &&
                         <div className= "divResult">
-                            <span id="TotContribution"><h3>Valor investido:</h3> {Intl.NumberFormat('pt-BR', 
+                            <span id="amountInvested"><h3>Valor investido:</h3> {Intl.NumberFormat('pt-BR', 
                             {style: 'currency', currency: 'BRL'})
-                            .format(totContribution)}</span>
+                            .format(amountInvested)}</span>
                         </div>
                     }
-                    {amount > 0 &&
+                    {totalAmount > 0 &&
                         <div className= "divResult">
-                            <span id="Amount"><h3>Juros recebidos:</h3> {Intl.NumberFormat('pt-BR', 
+                            <span id="totalAmount"><h3>Juros recebidos:</h3> {Intl.NumberFormat('pt-BR', 
                             {style: 'currency', currency: 'BRL'})
-                            .format((amount - totContribution).toFixed(2))}</span>
+                            .format((totalAmount - amountInvested).toFixed(2))}</span>
                         </div>
                     }
-                    {amount > 0 &&
+                    {totalAmount > 0 &&
                         <div className= "divResult">
-                            <span id="Amount"><h3>Amonte total:</h3> {Intl.NumberFormat('pt-BR', 
+                            <span id="totalAmount"><h3>Amonte total:</h3> {Intl.NumberFormat('pt-BR', 
                             {style: 'currency', currency: 'BRL'})
-                                .format(amount.toFixed(2))}</span>
+                                .format(totalAmount.toFixed(2))}</span>
                         </div>
                     }
                     
