@@ -36,20 +36,17 @@ function calculateMonthlyAmount(period, monthlyValue, interest) {
 }
 
 function convertPercentToDecimal(yearlyInterest, monthlyInterest) {
-    let interest;
     let iPerYear = yearlyInterest / 100;
 
     if (monthlyInterest == "")
-        interest = iPerYear / 12;
+        return iPerYear / 12;
     else
-        interest = monthlyInterest / 100;
-    return interest;
+        return monthlyInterest / 100;
 }
 
 function convertYearToMonth(numberOfMonths, numberOfYears) {
     if (numberOfMonths == "")
-        numberOfMonths = numberOfYears * 12;
+        return numberOfYears * 12;
     else
-        numberOfMonths = numberOfMonths * 1;
-    return numberOfMonths;
+        return numberOfMonths * 1;
 }
