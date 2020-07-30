@@ -114,7 +114,7 @@ export default function Simple(){
 
                     <div className="button">
                         <button type="submit">Calcular</button>
-                        {totalAmount > 0 && <button type = "reset" >resetar</button>}
+                        {totalAmount > 0 && <button type = "reset" >Reiniciar</button>}
                     </div>
                 <section className="result">
                     {totalAmount > 0 &&

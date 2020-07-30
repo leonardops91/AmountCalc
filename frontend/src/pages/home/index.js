@@ -8,7 +8,7 @@ export default function Home() {
         <div className="container-home">
             <div className="container-menu">
                 <img src={logo} alt="Amount calc"/>
-                <h1>Calculadora de juros compostos</h1>
+                <h1>Calculadora de juros</h1>
                 <h2>escolha o tipo de cálculo</h2>
                 <div className="container-buttons">
                     <Link to="/simple">Juros simples</Link>
