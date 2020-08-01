@@ -13,9 +13,11 @@ module.exports = {
         if(numberOfMonths == "")
             numberOfMonths = convertYearToMonth(numberOfYears);
 
+        let interest;
         if (monthlyInterest == "") 
-            monthlyInterest = yearlyInterestToMonthly(yearlyInterest);
-        let interest = convertPercentToDecimal(monthlyInterest);
+            interest = yearlyInterestToMonthly(yearlyInterest);
+        else
+            interest = monthlyInterest/100;
 
         let amountOfInitValue = calculateInitAmount(initValue, interest, numberOfMonths);
         let amountOfMonthlyValue = calculateMonthlyAmount(monthlyValue, interest, numberOfMonths);
@@ -26,10 +28,6 @@ module.exports = {
 
         return res.json({totalAmount, amountInvested});
     }
-}
-
-function convertPercentToDecimal(monthlyInterest) {
-    return monthlyInterest / 100;
 }
 
 function calculateInitAmount(initValue, interest, numberOfMonths) {
@@ -44,7 +42,7 @@ function calculateMonthlyAmount(monthlyValue, interest, numberOfMonths) {
 }
 
 function yearlyInterestToMonthly(yearlyInterest) {
-    return (Math.pow(1 + yearlyInterest, 1 / 12) - 1);
+    return (Math.pow((1 + (yearlyInterest/100)), 1 / 12) - 1);
 }
 
 function convertYearToMonth(numberOfYears) {

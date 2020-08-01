@@ -61,7 +61,7 @@ export default function Compound(){
                                         borderTopRightRadius: 0,
                                         borderBottomRightRadius: 0}}>
                                             R$
-                            </p><input type="double" style={{borderTopLeftRadius: 0,
+                            </p><input type="number" style={{borderTopLeftRadius: 0,
                                                         borderBottomLeftRadius: 0,
                                                         borderTopRightRadius: 8,
                                                         borderBottomRightRadius: 8}}
@@ -73,7 +73,7 @@ export default function Compound(){
                                         borderTopRightRadius: 0,
                                         borderBottomRightRadius: 0}}>
                                             R$
-                            </p><input type="double" style={{borderTopLeftRadius: 0,
+                            </p><input type="number" style={{borderTopLeftRadius: 0,
                                                         borderBottomLeftRadius: 0,
                                                         borderTopRightRadius: 8,
                                                         borderBottomRightRadius: 8}}
@@ -83,22 +83,22 @@ export default function Compound(){
                     </div>
                     <h3>Taxa de juros:</h3>
                     <div className = "input">
-                        <div><input type="double"
+                        <div><input type="number"
                         value={monthlyInterest}
                         onChange={e => setmonthlyInterest(e.target.value)}  
                         placeholder="Mensal"/><p>%</p></div>
-                        <div><input type="double"
+                        <div><input type="number"
                         value={yearlyInterest}
                         onChange={e => setyearlyInterest(e.target.value)}
                         placeholder="Anual"/><p>%</p></div>
                     </div>
                     <h3>Período de permanência</h3>
                     <div className = "input">
-                        <div><input type="double"
+                        <div><input type="number"
                         value={numberOfMonths}
                         onChange={e => setNumberOfMonths(e.target.value)}
                         placeholder="Meses"/><p>Meses</p></div>
-                        <div><input type="double"
+                        <div><input type="number"
                         value={numberOfYears}
                         onChange={e => setNumberOfYears(e.target.value)}
                         placeholder="Anos"/><p>Anos</p></div>

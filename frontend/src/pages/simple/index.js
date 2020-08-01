@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import api from '../../services/api';
-
-
-
-
 import logo from '../../assets/logo.png';
 import './style.css';
+
 
 export default function Simple(){
     const [initValue, setInitValue] = useState('');
@@ -18,7 +15,6 @@ export default function Simple(){
     const [totalAmount, setTotalAmount] = useState('');
     const [amountInvested, setAmountInvested] = useState('');
 
-
     const data = {
         initValue: initValue.replace("," , "."),
         monthlyValue: monthlyValue.replace("," , "."),
@@ -27,12 +23,9 @@ export default function Simple(){
         numberOfMonths: numberOfMonths.replace("," , "."),
         numberOfYears: numberOfYears.replace("," , ".")
     };
-
     
     async function handleCompound(e) {
         e.preventDefault();
-
-
 
         try {
             const response = await api.post('/simple', data);
@@ -52,7 +45,6 @@ export default function Simple(){
         setNumberOfYears("");
     }
     
-
     return(
         <div className="container">
             <div className="header">
@@ -69,7 +61,7 @@ export default function Simple(){
                                         borderTopRightRadius: 0,
                                         borderBottomRightRadius: 0}}>
                                             R$
-                            </p><input type="double" style={{borderTopLeftRadius: 0,
+                            </p><input type="number" style={{borderTopLeftRadius: 0,
                                                         borderBottomLeftRadius: 0,
                                                         borderTopRightRadius: 8,
                                                         borderBottomRightRadius: 8}}
@@ -81,7 +73,7 @@ export default function Simple(){
                                         borderTopRightRadius: 0,
                                         borderBottomRightRadius: 0}}>
                                             R$
-                            </p><input type="double" style={{borderTopLeftRadius: 0,
+                            </p><input type="number" style={{borderTopLeftRadius: 0,
                                                         borderBottomLeftRadius: 0,
                                                         borderTopRightRadius: 8,
                                                         borderBottomRightRadius: 8}}
@@ -91,22 +83,22 @@ export default function Simple(){
                     </div>
                     <h3>Taxa de juros:</h3>
                     <div className = "input">
-                        <div><input type="double"
+                        <div><input type="number"
                         value={monthlyInterest}
                         onChange={e => setMonthlyInterest(e.target.value)}  
                         placeholder="Taxa de juros mensais"/><p>%</p></div>
-                        <div><input type="double"
+                        <div><input type="number"
                         value={yearlyInterest}
                         onChange={e => setYearlyInterest(e.target.value)}
                         placeholder="Taxa de juros anuais"/><p>%</p></div>
                     </div>
                     <h3>Período de permanência</h3>
                     <div className = "input">
-                        <div><input type="double"
+                        <div><input type="number"
                         value={numberOfMonths}
                         onChange={e => setNumberOfMonths(e.target.value)}
                         placeholder="Periodo em meses"/><p>Meses</p></div>
-                        <div><input type="double"
+                        <div><input type="number"
                         value={numberOfYears}
                         onChange={e => setNumberOfYears(e.target.value)}
                         placeholder="Periodo em anos"/><p>Anos</p></div>
