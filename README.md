@@ -7,4 +7,4 @@ em que o usuário irá indicar valores de aportes e juros que serão utilizados,
 investimento. Como resultado o usuário receberá o valor investido, os juros recebidos durante o período e o amonte total ao final.
 
 No link a seguir pode ser acessada uma demonstração da aplicação:
-<a>https://amountcalc-frontend.herokuapp.com/</a>
+<a href="https://amountcalc-frontend.herokuapp.com/">Amount Calc</a>
