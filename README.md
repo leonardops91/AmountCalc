@@ -3,10 +3,12 @@
   <img src="frontend/src/assets/logo.png" width="280" height="100" alt="Amount Calc" />
 </p>
 
-<p align="center">
+<div align="center">
 
 [![NPM](https://img.shields.io/apm/l/vim-mode)](https://github.com/leonardops91/AmountCalc/blob/master/LICENSE)</br>
+</div>
 
+<div align="center">
  <a href="#-Descriçao">Visão Geral</a> •
  <a href="#-layout">Layout</a> •
  <a href="#-tecnologias">Tecnologias</a> •
@@ -14,7 +16,7 @@
  <a href="#-ferramentas">Ferramentas</a> •
   <a href="#-modelagem">Modelagem</a> •
  <a href="#-licença">Licença</a>
-</p>
+</div>
 
 ## 📋 Visão geral
 ### Motivação
