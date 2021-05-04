@@ -38,13 +38,13 @@ No link a seguir pode ser acessada uma demonstração da aplicação:
 <p align="center"><strong> 🖥 WEB </strong></p>
 
 <div align="center">
-Tela principal
+  <strong>Tela principal</strong></br>
  <img src="frontend\src\assets\tela-principal.png" width="850"></br>
- Tela juros compostos
+ <strong>Tela juros compostos</strong></br>
  <img src="frontend\src\assets\tela-juros-compostos.png" width="850"></br>
- Tela resultado
+ <strong>Tela resultado</strong></br>
  <img src="frontend\src\assets\tela-resultado.png" width="850"></br>
- Tela dispositivos mobile</br>
+ <strong>Tela dispositivos mobile</strong></br>
   <img src="frontend\src\assets\mobile.png" width="350">
 </div>
 
