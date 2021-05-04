@@ -94,6 +94,13 @@
 
 }
 
+.container .form div p {
+    font-size: 20px;
+    font-family: 'roboto', sans-serif;
+    font-weight: bold;
+    margin: 10px;
+}
+
 .container .form form div div{
     display: flex;
     align-items: center;
@@ -101,10 +108,13 @@
     width: 290px;
 }
 
-.container .form div div p {
+.container .form div div label {
+    width: 100%;
+    max-width: 110px;
     height: 100%;
     padding: 9.59px;
     background: rgb(2, 4, 71);
+    font-family: 'roboto', sans-serif;
     font-size: 20px;
     font-weight: bold;
     border-radius: 0 8px 8px 0;
@@ -188,3 +198,17 @@
 }
 
 
+@media (max-width: 650px) {
+    .container .form .imput {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+    }
+
+    .container .form div div p {
+        width: 100%;
+        max-width: fit-content;
+    }
+
+
+}

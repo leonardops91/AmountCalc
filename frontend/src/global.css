@@ -33,3 +33,19 @@ input{
     flex-direction: column;
     align-items: center;
 }
+
+@media (max-width: 650px) {
+    .container .form .input {
+        width: 100%;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    
+    }
+    .container .form div div p {
+        width: 100%;
+        max-width: fit-content;
+    }
+}

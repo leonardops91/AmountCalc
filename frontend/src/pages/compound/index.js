@@ -3,16 +3,18 @@ import { Link } from 'react-router-dom';
 import api from '../../services/api';
 import logo from '../../assets/logo.png';
 import './style.css';
+// import getForm from '../../services/GetForm';
 
 export default function Compound(){
     const [initValue, setInitValue] = useState('');
     const [monthlyValue, setMonthlyValue] = useState('');
-    const [monthlyInterest, setmonthlyInterest] = useState('');
-    const [yearlyInterest, setyearlyInterest] = useState('');
+    const [monthlyInterest, setMonthlyInterest] = useState('');
+    const [yearlyInterest, setYearlyInterest] = useState('');
     const [numberOfMonths, setNumberOfMonths] = useState('');
     const [numberOfYears, setNumberOfYears] = useState('');
     const [totalAmount, setTotalAmount] = useState('');
     const [amountInvested, setAmountInvested] = useState('');
+    
 
 
     const data = {
@@ -39,12 +41,12 @@ export default function Compound(){
     function handleReset() {
         setInitValue("");
         setMonthlyValue("");
-        setmonthlyInterest("");
-        setyearlyInterest("");
+        setMonthlyInterest("");
+        setYearlyInterest("");
         setNumberOfMonths("");
         setNumberOfYears("");
     }
-    
+    // return getForm();
     return(
         <div className="container">
             <div className="header">
@@ -56,27 +58,38 @@ export default function Compound(){
                 <h3>Aportes:</h3>
                 <form id = "values" onSubmit={handleCompound}  onReset={handleReset}>
                     <div className = "input">
-                        <div><p style={{borderTopLeftRadius: 8,
+                        <div><label htmlFor="initValue" style={{borderTopLeftRadius: 8,
                                         borderBottomLeftRadius: 8,
                                         borderTopRightRadius: 0,
-                                        borderBottomRightRadius: 0}}>
+                                        borderBottomRightRadius: 0,
+                                        width: 50
+                                        }}>
                                             R$
-                            </p><input type="number" style={{borderTopLeftRadius: 0,
-                                                        borderBottomLeftRadius: 0,
-                                                        borderTopRightRadius: 8,
-                                                        borderBottomRightRadius: 8}}
+                            </label><input type="number" id="initValue"
+                                                        style={{borderTopLeftRadius: 0,
+                                                            borderBottomLeftRadius: 0,
+                                                            borderTopRightRadius: 8,
+                                                            borderBottomRightRadius: 8
+                                                        }}
                                                         value={initValue}
                                                         onChange={e => setInitValue(e.target.value)}
                                                         placeholder="Valor inicial"/></div>
-                        <div><p style={{borderTopLeftRadius: 8,
+                                                        <p>e/ou</p>
+                        <div><label htmlFor="monthlyValue" 
+                                        style={{borderTopLeftRadius: 8,
                                         borderBottomLeftRadius: 8,
                                         borderTopRightRadius: 0,
-                                        borderBottomRightRadius: 0}}>
+                                        borderBottomRightRadius: 0,
+                                        width: 50
+                                        }}>
                                             R$
-                            </p><input type="number" style={{borderTopLeftRadius: 0,
-                                                        borderBottomLeftRadius: 0,
-                                                        borderTopRightRadius: 8,
-                                                        borderBottomRightRadius: 8}}
+                            </label><input type="number" id="monthlyValue"
+                                                        style={{borderTopLeftRadius: 0,
+                                                            borderBottomLeftRadius: 0,
+                                                            borderTopRightRadius: 8,
+                                                            borderBottomRightRadius: 8,
+                                                            
+                                                        }}
                                                         value={monthlyValue}
                                                         onChange={e => setMonthlyValue(e.target.value)} 
                                                         placeholder="Aporte mensal"/></div>
@@ -84,24 +97,30 @@ export default function Compound(){
                     <h3>Taxa de juros:</h3>
                     <div className = "input">
                         <div><input type="number"
+                        id="monthlyInterest"
                         value={monthlyInterest}
-                        onChange={e => setmonthlyInterest(e.target.value)}  
-                        placeholder="Mensal"/><p>%</p></div>
+                        onChange={e => setMonthlyInterest(e.target.value)}  
+                        placeholder="Mensal"/> <label htmlFor="monthlyInterest">% ao mês</label> </div>
+                        <p>ou</p>
                         <div><input type="number"
+                        id="yearlyInterest"
                         value={yearlyInterest}
-                        onChange={e => setyearlyInterest(e.target.value)}
-                        placeholder="Anual"/><p>%</p></div>
+                        onChange={e => setYearlyInterest(e.target.value)}
+                        placeholder="Anual"/><label htmlFor="yearlyInterest">% ao ano</label></div>
                     </div>
                     <h3>Período de permanência</h3>
                     <div className = "input">
                         <div><input type="number"
+                        id="numberOfMonths"
                         value={numberOfMonths}
                         onChange={e => setNumberOfMonths(e.target.value)}
-                        placeholder="Meses"/><p>Meses</p></div>
+                        placeholder="Meses"/><label htmlFor="numberOfMonths">Meses</label></div>
+                        <p>ou</p>
                         <div><input type="number"
+                        id="numberOfYears"
                         value={numberOfYears}
                         onChange={e => setNumberOfYears(e.target.value)}
-                        placeholder="Anos"/><p>Anos</p></div>
+                        placeholder="Anos"/><label htmlFor="numberOfYears">Anos</label></div>
                     </div>
 
                     <div className="button">
